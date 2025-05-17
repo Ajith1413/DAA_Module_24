@@ -24,8 +24,8 @@ When passing through a path cell containing a cherry, you pick it up, and the ce
 To implement the program for Cherry pickup problem.
 
 
-Developed by: RAKSHITHA K
-Register Number:  212223110039
+Developed by: AJITH KUMAR A
+Register Number:  212223230009
 
 class Solution:
     def cherryPickup(self, grid):
