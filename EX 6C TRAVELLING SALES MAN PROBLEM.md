@@ -19,8 +19,8 @@ To Solve Travelling Sales man Problem for the following graph.
 To implement the program for TSP.
 
 
-Developed by: RAKSHITHA K
-Register Number:  212223110039
+Developed by: AJITH KUMAR A
+Register Number:  212223230009
 
 
 from sys import maxsize
