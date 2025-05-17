@@ -18,8 +18,8 @@ To write a python program using brute force method of searching for the given su
 To implement the program using brute force method of searching for the given substring in the main string.
 
 
-Developed by: 
-Register Number:  
+Developed by: AJITH KUMAR A
+Register Number:  212223230009
 
 import re #Import this package
 def match(str1,str2):
