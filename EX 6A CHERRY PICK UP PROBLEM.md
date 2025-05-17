@@ -14,26 +14,47 @@ When passing through a path cell containing a cherry, you pick it up, and the ce
 
 
 ## Algorithm
-1. 
-2. 
-3. 
-4.  
-5.   
-
+1.Start from the top-left cell (0, 0) and move to the bottom-right cell (n-1, n-1) collecting cherries.
+2.Use dynamic programming to track maximum cherries collected along all possible paths.
+3.After reaching the destination, simulate a second trip from bottom-right back to top-left.
+4.On both trips, ensure cherries are only picked once by marking visited cells as 0.
+5.Return the total number of cherries collected during both trips.
 ## Program:
-```
-/*
+~~~
 To implement the program for Cherry pickup problem.
 
 
-Developed by: 
-Register Number:  
-*/
-```
+Developed by: RAKSHITHA K
+Register Number:  212223110039
+
+class Solution:
+    def cherryPickup(self, grid):
+        n = len(grid)
+        #############    Add your code here  ############### 
+        #Start here
+        dp = [[-1] * (n + 1) for _ in range(n + 1)]
+        dp[1][1] = grid[0][0]
+        for m in range(1, (n << 1) - 1):
+            for i in range(min(m, n - 1), max(-1, m - n), -1):
+                for p in range(i, max(-1, m - n), -1):
+                    j, q = m - i, m - p
+                    if grid[i][j] == -1 or grid[p][q] == -1:
+                        dp[i + 1][p + 1] = -1
+                    else:
+                        dp[i + 1][p + 1] = max(dp[i + 1][p + 1], dp[i][p + 1], dp[i + 1][p], dp[i][p])
+                        if dp[i + 1][p + 1] != -1: dp[i + 1][p + 1] += grid[i][j] + (grid[p][q] if i != p else 0)
+        return max(0, dp[-1][-1])
+        n,m=len(grid),len(grid[0])
+        dp = [[[-1 for i in range(m)] for j1 in range(n)] for j2 in range(n)]
+        #End here
+        return f(0,0,m-1,dp)
+obj=Solution()
+grid=[[0,1,-1],[1,0,-1],[1,1,1]]        
+print(obj.cherryPickup(grid))
+~~~
 
 ## Output:
-
-
+![image](https://github.com/user-attachments/assets/f136558a-c78e-41bd-aa51-bfbe790d6bed)
 
 ## Result:
 Thus the above program was executed successfully for finding the maximum number of cherries from grid.
