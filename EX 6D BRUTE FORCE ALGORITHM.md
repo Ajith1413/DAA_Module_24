@@ -7,26 +7,36 @@ To write a python program using brute force method of searching for the given su
 
 
 ## Algorithm
-1. 
-2. 
-3. 
-4.  
-5.   
+1.Generate all possible permutations of the input elements.
+2.Initialize a variable to keep track of the best (optimal) solution found so far.
+3.Fr each permutation, calculate the cost or value of that arrangement.
+4.Cmpare the calculated cost with the best solution and update if better.
+5.After checking all permutations, return the best solution found.
 
 ## Program:
-```
-/*
+~~~
 To implement the program using brute force method of searching for the given substring in the main string.
 
 
 Developed by: 
 Register Number:  
-*/
-```
+
+import re #Import this package
+def match(str1,str2):
+    ########### Add your code here #######
+    #Start here
+    pattern = re.compile(str2)
+    r = pattern.search(str1)
+    while r:
+        print("Found at index {}".format(r.start()))
+        r = pattern.search(str1,r.start() + 1)
+    #End here
+str1=input()
+str2=input()
+~~~
 
 ## Output:
-
-
+![image](https://github.com/user-attachments/assets/900db451-c344-41e7-9071-930a87b82e29)
 
 ## Result:
 Thus the above program was executed successfully for searching the substring at respective index.
